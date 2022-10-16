@@ -1,17 +1,22 @@
 ﻿// Код проекта
 string[] arString = {"Mouse", "Cat", "Dog","Pie","pineapple", "tea"};
-int count = arString.Length;
+string[] arStringLite = new string[arString.Length];
 
-string[] arStringLite = new string[] {};
+int countItems = 0; 
 
-for (int i = 0; i < count; i++)
+// Пробегаемся по массиву и добавляем в новый массив слова с количеством символов меньше или равным 3
+// путём подсчёта индекса удовлетворяющих условие элементов
+for (int i = 0; i < arString.Length; i++)
 {
     if (arString[i].Length <= 3){
-        Console.WriteLine(arString[i]);
+        arStringLite[countItems] = arString[i];
+        countItems += 1;
     }
 }
+
+// Выводим результат
 Console.WriteLine("--------------------------------");
 Console.WriteLine("Result: ");
-for (int i = 0; i < arStringLite.Length; i++) {
-    Console.Write($"{arStringLite[i]}, ");
+for (int i = 0; i < countItems; i++) {
+    Console.Write($"{arStringLite[i]} ");
 }
